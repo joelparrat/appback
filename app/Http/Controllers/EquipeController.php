@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ApiController extends Controller
+class EquipeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class ApiController extends Controller
      */
     public function index()
     {
-        //
+        $equipes = Equipe::all();
+        return $equipes;
     }
 
     /**

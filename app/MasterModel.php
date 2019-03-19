@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ApiModel extends Model
+class MasterModel extends Model
 {
-    //protected $table='Joueur';
+    protected $table='Master';
 }
