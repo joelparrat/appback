@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
+use \App\EquipeModel;
 use Illuminate\Http\Request;
 
 class EquipeController extends Controller
@@ -13,7 +14,7 @@ class EquipeController extends Controller
      */
     public function index()
     {
-        $equipes = Equipe::all();
+        $equipes = EquipeModel::all();
         return $equipes;
     }
 
@@ -46,7 +47,10 @@ class EquipeController extends Controller
      */
     public function show($id)
     {
-        //
+        $now = Carbon::now();
+        $equipe = EquipeModel::where('no', '=', $id)->first();
+        $equipe->chrono = $now->diffInSeconds($equipe->depart);
+        return $equipe;
     }
 
     /**
