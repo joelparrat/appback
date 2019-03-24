@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MasterModel extends Model
+class JointureModel extends Model
 {
-    protected $table='Master';
+    protected $table='Jointure';
 }

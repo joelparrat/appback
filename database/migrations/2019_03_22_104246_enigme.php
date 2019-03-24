@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Master extends Migration
+class Enigme extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class Master extends Migration
      */
     public function up()
     {
-        Schema::create('Master', function(Blueprint $table)
+        Schema::create('Enigme', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('prenom');
             $table->string('nom');
-            $table->string('salle');
-            $table->string('no');
-            $table->timestamps();
+            $table->string('code', 32);
         });
     }
 
@@ -31,6 +28,6 @@ class Master extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Master');
+        Schema::dropIfExists('Enigme');
     }
 }

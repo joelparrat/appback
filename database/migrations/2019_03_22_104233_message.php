@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Joueur extends Migration
+class Message extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class Joueur extends Migration
      */
     public function up()
     {
-        Schema::create('Joueur', function(Blueprint $table)
+        Schema::create('Message', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('prenom');
-            $table->string('nom');
-            $table->string('filiere');
-            $table->string('couleur');
-            $table->string('equipe');
+            $table->string('text');
+            $table->unsignedInteger('dequi');
+            $table->unsignedInteger('aqui');
+            $table->unsignedInteger('message');
+            $table->string('flag');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class Joueur extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Joueur');
+        Schema::dropIfExists('Message');
     }
 }
